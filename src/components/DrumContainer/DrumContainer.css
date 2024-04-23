@@ -1,0 +1,16 @@
+#drum-machine {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
+  border: 2px solid var(--sec-color);
+  background-color: var(--app-bckg);
+  box-shadow: 5px 5px 5px gray;
+  padding: 10px;
+  border-radius: var(--b-rad);
+}
+#drum-machine.moobile {
+  flex-direction: column;
+}

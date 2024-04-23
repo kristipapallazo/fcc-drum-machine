@@ -1,0 +1,10 @@
+.drum-pad {
+  background-color: var(--pri-color);
+  border-radius: var(--b-rad);
+  color: var(--app-bckg);
+  box-shadow: 5px 5px 5px var(--app-bckg);
+  cursor: pointer;
+}
+
+.clip {
+}
