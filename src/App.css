@@ -8,3 +8,11 @@
   row-gap: 10px;
   background-color: var(--pri-color);
 }
+#display {
+  background-color: var(--pri-color);
+  color: var(--app-bckg);
+  padding: 5px 10px;
+  text-align: center;
+  width: 80%;
+  border-radius: var(--b-rad);
+}

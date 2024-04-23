@@ -7,7 +7,6 @@ const DrumContainer = (props) => {
     <div id="drum-machine">
       <ItemsContainer />
       <ActionContainer />
-      {/* <div id="display"></div> */}
     </div>
   );
 };

@@ -6,7 +6,9 @@ import { MainCtx } from "../../App";
 const ItemsContainer = (props) => {
   const { store } = useContext(MainCtx);
   console.log("store :>> ", store);
-  const drumItems = store.map((item) => <DrumItem key={item.id} item={item} />);
+  const drumItems = store.map((item, i) => (
+    <DrumItem key={item.id} item={item} />
+  ));
 
   return <div className={classes.container}>{drumItems}</div>;
 };

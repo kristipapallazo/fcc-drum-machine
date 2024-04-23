@@ -1,7 +1,7 @@
 :root {
-  --pri-color: lightgray;
+  --pri-color: gray;
   --sec-color: yellowgreen;
-  --app-bckg: lightgray;
+  --app-bckg: black;
   --b-rad: 5px;
 }
 * {
