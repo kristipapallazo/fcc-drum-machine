@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import classes from "./SwitchBtn.module.css";
-import { MainCtx } from "../../../App";
+import { MainCtx } from "../../../context/MainCtx";
 
 const SwitchBtn = (props) => {
   const { id, label = "" } = props;

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import DrumItem from "../DrumItem/DrumItem";
 import classes from "./ItemsContainer.module.css";
-import { MainCtx } from "../../App";
+import { MainCtx } from "../../context/MainCtx";
 
 const ItemsContainer = (props) => {
   const { store } = useContext(MainCtx);

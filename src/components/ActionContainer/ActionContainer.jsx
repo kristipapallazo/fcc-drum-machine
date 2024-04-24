@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import classes from "./ActionContainer.module.css";
-import { MainCtx } from "../../App";
+import { MainCtx } from "../../context/MainCtx";
 import SwitchBtn from "../UI/SwitchBtn/SwitchBtn";
 
 const ActionContainer = () => {
