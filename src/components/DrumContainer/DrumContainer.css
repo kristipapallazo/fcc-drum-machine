@@ -1,6 +1,7 @@
 #drum-machine {
   width: 60%;
-  height: auto;
+  /* height: auto; */
+  height: 60%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   column-gap: 10px;

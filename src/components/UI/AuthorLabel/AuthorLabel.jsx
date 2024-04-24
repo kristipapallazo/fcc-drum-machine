@@ -2,8 +2,8 @@ import classes from "./AuthorLabel.module.css";
 
 const AuthorLabel = () => {
   return (
-    <p id={classes.container}>
-      by <span id={classes.name}>papallazo</span>
+    <p className={classes.container}>
+      by <span className={classes.name}>papallazo</span>
     </p>
   );
 };

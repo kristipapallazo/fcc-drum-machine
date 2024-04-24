@@ -1,11 +1,24 @@
 import { MainCtx } from "../../context/MainCtx";
 import { getItemTitle } from "../../utils/helpers";
 import "./DrumItem.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 const DrumItem = ({ item }) => {
   const { text, url, bankUrl } = item;
   const { setSelectedItem, features } = useContext(MainCtx);
+  const ref = useRef(null);
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.volume = features.volume / 100;
+      // ref.current.addEventListener("click", () => {
+      //   const sourceUrl = features.bank ? bankUrl : url;
+      //   const title = getItemTitle(sourceUrl);
+      //   console.log("title :>> ", title);
+      //   setSelectedItem(title);
+      // });
+    }
+  }, [features.volume]);
+
   const sourceUrl = features.bank ? bankUrl : url;
   const title = getItemTitle(sourceUrl);
 
@@ -36,6 +49,7 @@ const DrumItem = ({ item }) => {
         id={text}
         muted={!features.power}
         src={sourceUrl}
+        ref={ref}
       ></audio>
       {text}
     </div>
