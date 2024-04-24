@@ -1,6 +1,6 @@
-export const initialStore = [
+export const INITIAL_STORE = [
   {
-    id: "clip-title",
+    id: "0",
     text: "Q",
     url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
     bankUrl: "https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3",
@@ -54,3 +54,5 @@ export const initialStore = [
     bankUrl: "https://s3.amazonaws.com/freecodecamp/drums/Bld_H1.mp3",
   },
 ];
+
+export const KEYS_ARR = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];

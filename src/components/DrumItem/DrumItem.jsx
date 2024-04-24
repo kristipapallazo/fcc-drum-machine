@@ -1,26 +1,42 @@
 import { MainCtx } from "../../context/MainCtx";
+import { getItemTitle } from "../../utils/helpers";
 import "./DrumItem.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const DrumItem = ({ item }) => {
-  const { text, id, url, bankUrl } = item;
+  const { text, url, bankUrl } = item;
   const { setSelectedItem, features } = useContext(MainCtx);
-  const handleClick = (id) => {
-    const drumPadEl = document.getElementById(id);
-    console.log("drumPadEl :>> ", drumPadEl);
+  const sourceUrl = features.bank ? bankUrl : url;
+  const title = getItemTitle(sourceUrl);
+
+  const handleClick = (drumPadId, audioId) => {
+    const drumPadEl = document.getElementById(drumPadId);
+    const audioEl = document.getElementById(audioId);
+    audioEl.play();
     drumPadEl.style.background = "var(--sec-color)";
-    setSelectedItem(id);
+    console.log("drumPadId :>> ", drumPadId);
+    setSelectedItem(drumPadId);
     setTimeout(() => {
       drumPadEl.style.background = "var(--pri-color)";
     }, 200);
   };
-  const sourceUrl = features.bank ? bankUrl : url;
+  // useEffect(() => {
+  //   console.log("test");
+  //   setSelectedItem(null);
+  // }, [features.bank, title, setSelectedItem]);
 
   return (
-    <div className="drum-pad" id={id} onClick={() => handleClick(id)}>
-      <audio className="clip" id={text}>
-        <source src={sourceUrl} type="audio/mp3"></source>
-      </audio>
+    <div
+      className="drum-pad"
+      id={title}
+      onClick={() => handleClick(title, text)}
+    >
+      <audio
+        className="clip"
+        id={text}
+        muted={!features.power}
+        src={sourceUrl}
+      ></audio>
       {text}
     </div>
   );

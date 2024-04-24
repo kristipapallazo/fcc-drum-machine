@@ -1,9 +1,8 @@
 #drum-machine {
   width: 60%;
-  height: 60%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  height: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   column-gap: 10px;
   border: 2px solid var(--sec-color);
   background-color: var(--app-bckg);
@@ -11,6 +10,9 @@
   padding: 10px;
   border-radius: var(--b-rad);
 }
-#drum-machine.moobile {
-  flex-direction: column;
+
+.mobile {
+  grid-template-columns: 1fr !important;
+  /* grid-template-rows: 1fr 1fr; */
+  width: 80% !important;
 }

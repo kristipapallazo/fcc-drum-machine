@@ -15,4 +15,5 @@
   text-align: center;
   width: 80%;
   border-radius: var(--b-rad);
+  min-height: 30px;
 }
