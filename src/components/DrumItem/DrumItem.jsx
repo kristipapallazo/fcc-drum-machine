@@ -3,46 +3,35 @@ import { getItemTitle } from "../../utils/helpers";
 import "./DrumItem.css";
 import { useContext, useEffect, useRef } from "react";
 
+export const handleClick = (title, text, setSelectedItem) => {
+  const drumPadEl = document.getElementById(title);
+  const audioEl = document.getElementById(text);
+  audioEl.play();
+  drumPadEl.style.background = "var(--sec-color)";
+  setSelectedItem(title);
+  setTimeout(() => {
+    drumPadEl.style.background = "var(--pri-color)";
+  }, 200);
+};
+
 const DrumItem = ({ item }) => {
   const { text, url, bankUrl } = item;
-  const { setSelectedItem, features } = useContext(MainCtx);
+  const { features, setSelectedItem } = useContext(MainCtx);
   const ref = useRef(null);
   useEffect(() => {
     if (ref.current) {
       ref.current.volume = features.volume / 100;
-      // ref.current.addEventListener("click", () => {
-      //   const sourceUrl = features.bank ? bankUrl : url;
-      //   const title = getItemTitle(sourceUrl);
-      //   console.log("title :>> ", title);
-      //   setSelectedItem(title);
-      // });
     }
   }, [features.volume]);
 
   const sourceUrl = features.bank ? bankUrl : url;
   const title = getItemTitle(sourceUrl);
 
-  const handleClick = (drumPadId, audioId) => {
-    const drumPadEl = document.getElementById(drumPadId);
-    const audioEl = document.getElementById(audioId);
-    audioEl.play();
-    drumPadEl.style.background = "var(--sec-color)";
-    console.log("drumPadId :>> ", drumPadId);
-    setSelectedItem(drumPadId);
-    setTimeout(() => {
-      drumPadEl.style.background = "var(--pri-color)";
-    }, 200);
-  };
-  // useEffect(() => {
-  //   console.log("test");
-  //   setSelectedItem(null);
-  // }, [features.bank, title, setSelectedItem]);
-
   return (
     <div
       className="drum-pad"
       id={title}
-      onClick={() => handleClick(title, text)}
+      onClick={() => handleClick(title, text, setSelectedItem)}
     >
       <audio
         className="clip"

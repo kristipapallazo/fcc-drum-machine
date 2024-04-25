@@ -6,7 +6,6 @@ import VolumeControl from "../UI/Volume/Volume";
 
 const ActionContainer = () => {
   const { selectedItem } = useContext(MainCtx);
-  console.log("selectedItem :>> ", selectedItem);
   return (
     <div className={classes.container}>
       <SwitchBtn label="Power" id="power" />

@@ -15,7 +15,6 @@ const VolumeControl = () => {
 
   return (
     <div className={classes.container}>
-      <h2 className={classes.label}>Volume Control</h2>
       <input
         className={classes.input}
         type="range"
@@ -24,7 +23,7 @@ const VolumeControl = () => {
         value={volume}
         onChange={handleVolumeChange}
       />
-      <p className={classes.volResp}>Volume: {volume}</p>
+      <span className={classes.vol}>Volume: {volume}</span>
     </div>
   );
 };

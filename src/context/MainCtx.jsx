@@ -14,7 +14,6 @@ export const initialState = {
   features: initialFeatures,
   setFeatures: () => {},
   isMobile: false,
-  test: () => {},
 };
 export const MainCtx = createContext(initialState);
 
@@ -22,12 +21,6 @@ const MainCtxProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [features, setFeatures] = useState(initialFeatures);
   const [isMobile, setIsMobile] = useState(false);
-  const test = (title) => {
-    console.log("title in test :>> ", title);
-    setSelectedItem(title);
-  };
-
-  console.log("selectedItem :>> ", selectedItem);
 
   useEffect(() => {
     const isMobile = mobileAndTabletcheck(window.innerWidth);
@@ -41,7 +34,6 @@ const MainCtxProvider = ({ children }) => {
     features,
     setFeatures,
     isMobile,
-    test,
   };
   return <MainCtx.Provider value={ctxVal}>{children}</MainCtx.Provider>;
 };

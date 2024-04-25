@@ -1,3 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 10px;
+  margin-top: 20px;
+  width: 80%;
+}
 .input {
   -webkit-appearance: none;
   appearance: none;
@@ -6,6 +15,8 @@
   border-radius: 5px;
   background: var(--pri-color);
   outline: none;
+  min-width: 80%;
+  position: relative;
 }
 .input::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -22,4 +33,16 @@
   border-radius: 50%;
   background: var(--sec-color);
   cursor: pointer;
+}
+.volContainer {
+  margin-bottom: 20px;
+}
+.vol {
+  color: var(--pri-color);
+  font-weight: bold;
+  margin-top: 10px;
+  visibility: hidden;
+}
+.input:hover + .vol {
+  visibility: visible;
 }
