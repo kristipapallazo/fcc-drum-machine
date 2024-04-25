@@ -2,10 +2,10 @@
   background-color: var(--pri-color);
   border-radius: var(--b-rad);
   color: var(--app-bckg);
-  box-shadow: 5px 5px 5px var(--app-bckg);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  box-shadow: 2px 2px 5px lightgray;
 }

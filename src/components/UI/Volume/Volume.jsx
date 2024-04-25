@@ -3,8 +3,8 @@ import classes from "./Volume.module.css";
 import { MainCtx } from "../../../context/MainCtx";
 
 const VolumeControl = () => {
-  const [volume, setVolume] = useState(50);
-  const { setFeatures } = useContext(MainCtx);
+  const { setFeatures, features } = useContext(MainCtx);
+  const [volume, setVolume] = useState(features.volume);
 
   const handleVolumeChange = (event) => {
     setVolume(event.target.value);
@@ -23,7 +23,9 @@ const VolumeControl = () => {
         value={volume}
         onChange={handleVolumeChange}
       />
-      <span className={classes.vol}>Volume: {volume}</span>
+      <span className={classes.vol}>
+        Volume: <span className={classes.value}>{volume}</span>
+      </span>
     </div>
   );
 };

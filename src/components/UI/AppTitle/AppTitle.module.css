@@ -1,0 +1,12 @@
+.title {
+  font-size: 5rem;
+  font-size: bold;
+  font-style: italic;
+  color: var(--app-bckg);
+  text-shadow: 2px 2px 2px var(--sec-color);
+}
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+}

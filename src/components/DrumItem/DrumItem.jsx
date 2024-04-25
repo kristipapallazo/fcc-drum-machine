@@ -8,9 +8,13 @@ export const handleClick = (title, text, setSelectedItem) => {
   const audioEl = document.getElementById(text);
   audioEl.play();
   drumPadEl.style.background = "var(--sec-color)";
+  drumPadEl.style.boxShadow = "2px 2px 5px inset black";
+  // document.getElementById('display').innerHTML = title
   setSelectedItem(title);
+
   setTimeout(() => {
     drumPadEl.style.background = "var(--pri-color)";
+    drumPadEl.style.boxShadow = "2px 2px 5px gray";
   }, 200);
 };
 

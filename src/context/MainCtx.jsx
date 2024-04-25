@@ -1,11 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { INITIAL_STORE } from "../globals/index";
-import { mobileAndTabletcheck } from "../utils/helpers";
 
 const initialFeatures = {
   power: true,
   bank: false,
-  volume: 0,
+  volume: 30,
 };
 export const initialState = {
   store: [],
@@ -13,19 +12,12 @@ export const initialState = {
   setSelectedItem: () => {},
   features: initialFeatures,
   setFeatures: () => {},
-  isMobile: false,
 };
 export const MainCtx = createContext(initialState);
 
 const MainCtxProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [features, setFeatures] = useState(initialFeatures);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const isMobile = mobileAndTabletcheck(window.innerWidth);
-    setIsMobile(isMobile);
-  }, []);
 
   const ctxVal = {
     store: INITIAL_STORE,
@@ -33,7 +25,6 @@ const MainCtxProvider = ({ children }) => {
     setSelectedItem,
     features,
     setFeatures,
-    isMobile,
   };
   return <MainCtx.Provider value={ctxVal}>{children}</MainCtx.Provider>;
 };
